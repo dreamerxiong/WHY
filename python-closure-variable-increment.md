@@ -4,7 +4,7 @@ Situation 1:
 def foo():
     counter = [1]
     def bar():
-        counter += [1]
+        counter = counter + [1]
         print(counter)
     return bar
 </pre>
@@ -30,10 +30,24 @@ def foo():
 [1, 1]
 </pre>
 
+Situation 3:
+<pre>
+def foo():
+    counter = [1]
+    def bar():
+        counter1 = counter + [1]
+        print(counter1)
+    return bar
+</pre>
+<pre>
+>>> foo()()
+[1, 1]
+</pre>
+
 
 ## Reference:
 
 https://stackoverflow.com/questions/21959985/why-cant-python-increment-variable-in-closure
 
 ### FIXME：
-Difference(variable assignment) between `counter += [1]` and `counter.append(1)` 
+Difference between `counter = counter + [1]` , `counter.append(1)` and `counter1 = counter + [1]`
