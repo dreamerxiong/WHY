@@ -1,2 +1,2 @@
 # WHY
-Issues/Bugs to be fixed/figured out
+This repository is used to record some tricky/confusing problems...
